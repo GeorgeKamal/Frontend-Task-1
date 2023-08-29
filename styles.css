@@ -8,75 +8,81 @@ body {
     line-height: 24px;
 }
 
-.card-title-poppins {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 28px;
-    color: #3A3A3A;
+.card {
+    &-title-poppins {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 28px;
+        color: #3A3A3A;
+    }
+
+    &-subtitle-poppins {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #898989;
+    }
+
+    &-price-poppins {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        color: #3A3A3A;
+    }
+
+    &-price-old-poppins {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #B0B0B0;
+    }
+
+    &-overlay-poppins {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: white;
+
+        &:hover {
+            color: #B88E2F !important;
+        }
+    }
 }
 
-.card-subtitle-poppins {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #898989;
-}
 
-.card-price-poppins {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 30px;
-    color: #3A3A3A;
-}
+.yellow {
+    &-text {
+        color: #B88E2F !important;
+    }
 
-.card-price-old-poppins {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #B0B0B0;
-}
+    &-background {
+        background-color: #B88E2F !important;
+    }
 
-.card-overlay-poppins {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    color: white;
-}
+    &-button {
+        color: white;
+        background-color: #B88E2F !important;
+        border-color: #B88E2F !important;
+        border-radius: 0;
 
-.card-overlay-poppins:hover {
-    color: #B88E2F !important;
-}
+        &:hover {
+            color: white;
+            background-color: #987011 !important;
+            border-color: #B88E2F !important;
+        }
 
-.yellow-text {
-    color: #B88E2F !important;
-}
+        &-outline {
+            color: #B88E2F;
+            border-color: #B88E2F !important;
+            border-radius: 0;
 
-.yellow-background {
-    background-color: #B88E2F !important;
-}
-
-.yellow-button {
-    color: white;
-    background-color: #B88E2F !important;
-    border-color: #B88E2F !important;
-    border-radius: 0;
-}
-.yellow-button-outline {
-    color: #B88E2F;
-    border-color: #B88E2F !important;
-    border-radius: 0;
-}
-
-.yellow-button:hover {
-    color: white;
-    background-color: #987011 !important;
-    border-color: #B88E2F !important;
-}
-
-.yellow-button-outline:hover {
-    color: white !important;
-    background-color: #B88E2F !important;
-    border-color: #B88E2F !important;
+            &:hover {
+                color: white !important;
+                background-color: #B88E2F !important;
+                border-color: #B88E2F !important;
+            }
+        }
+    }
 }
 
 .btn {
@@ -94,7 +100,7 @@ body {
 .overlay {
     position: relative;
 
-    .overlay-text {
+    &-text {
         position: absolute;
         top: 20%;
         left: 51%;
@@ -103,23 +109,58 @@ body {
         height: 65%;
         max-width: 643px;
         /* padding: 60px 40px; */
-
-        .overlay-button {
-            height: 25%;
-            position: absolute;
-            top: 68%;
-        }
     }
+
+    // &-button {
+    //     height: 25%;
+    //     position: absolute;
+    //     top: 68%;
+    // }
 }
 
 .mask:hover {
     background-color: rgba(58, 58, 58, 0.75);
 }
 
+.radio-button[type="radio"] {
+    /* Set the size of the radio button */
+    width: 20px;
+    height: 20px;
+    /* Hide the default radio button */
+    appearance: none;
+    -webkit-appearance: none;
+    /* Create a custom radio button */
+    border: 2px solid #ffffff00;
+    border-radius: 50%;
+    outline: none;
+    background-color: #D8D8D8;
+    /* Add a transition effect */
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Customize the radio button when it is checked */
+input[type="radio"]:checked {
+    /* Change the border color */
+    background-color: #B88E2F;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/* Customize the radio button during the click effect */
+input[type="radio"]:active {
+    /* Change the border color */
+    border: 2px solid #ffffff;
+    background-color: #987011;
+}
+
+#background {
+    width: auto;
+    height: 90vh;
+}
+
 @media screen and (max-width: 1200px) {
     .overlay {
 
-        .overlay-text {
+        &-text {
             height: fit-content;
             top: 15%;
             left: 45%;
@@ -148,7 +189,7 @@ body {
     .overlay {
         position: relative;
 
-        .overlay-text {
+        &-text {
             position: relative;
             bottom: -25px;
             left: 0%;
@@ -170,17 +211,27 @@ body {
             #break {
                 display: none;
             }
-
-            .overlay-button {
-                .btn.btn-primary {
-                    font-size: 100% !important;
-                }
-
-                height: 30px;
-                position: relative;
-                text-align: center;
-            }
         }
+
+        // &-button {
+        //     // .btn.btn-primary {
+        //     //     font-size: 100% !important;
+        //     // }
+
+        //     height: 30px;
+        //     position: relative;
+        //     text-align: center;
+        // }
+    }
+
+    #background {
+        height: auto !important;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .extra-small {
+        font-size: 36px !important;
     }
 }
 
@@ -188,5 +239,4 @@ body {
     .widescreen {
         max-width: 1400px !important;
     }
-
 }
